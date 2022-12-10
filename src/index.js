@@ -34,7 +34,9 @@ function* fetchDetail(action) {
     console.log('In fetch detail',action.payload.id)
     try{
         const detail = yield axios.get(`/api/genre/${action.payload.id}`);
-        console.log('get details', detail.data)
+        console.log('get details', detail.data);
+        yield put({ type: 'SET_GENRES', payload: detail.data });
+        
     } catch{
         console.log('Error in fetchDetail')
     }
