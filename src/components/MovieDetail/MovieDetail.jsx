@@ -7,7 +7,7 @@ function MovieDetail(){
     const dispatch = useDispatch();
     //get :id from url
     const params = useParams();
-        console.log(params)
+        console.log('movieDetail',params)
 
     const history = useHistory();
 
@@ -17,7 +17,7 @@ function MovieDetail(){
     }
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_DETAIL' });
+        dispatch({ type: 'FETCH_DETAIL', payload: params});
     }, []);
 
     return (

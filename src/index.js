@@ -30,11 +30,11 @@ function* fetchAllMovies() {
         
 }
 
-function* fetchDetail() {
-    console.log('In fetch detail')
+function* fetchDetail(action) {
+    console.log('In fetch detail',action.payload.id)
     try{
-        const detail = yield axios.get('/api/genre');
-        console.log('get details', detail)
+        const detail = yield axios.get(`/api/genre/${action.payload.id}`);
+        console.log('get details', detail.data)
     } catch{
         console.log('Error in fetchDetail')
     }
