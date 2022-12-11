@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/:id', (req, res) => {
-  console.log('genre.router',req.params)
+  //console.log('genre.router',req.params)
   // Add query to get all genres
   const query = `SELECT "name"
   FROM "movies"

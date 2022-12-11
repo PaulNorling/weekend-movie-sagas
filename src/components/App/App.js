@@ -3,7 +3,7 @@ import './App.css';
 import { useSelector } from 'react-redux'
 import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail';
-
+import Header from '../Header/Header';
 
 function App() {
 
@@ -11,12 +11,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+      <Header/>
       <Router>        
         <Route path="/" exact>
           <MovieList />
         </Route>
         {/* Details page */}
+        {/* TODO BREAK INTO COMPOMONENT! */}
         {movies.map(movie => {
                     return (
                         <Route key={movie.id} exact path={`/details/${movie.id}`}>

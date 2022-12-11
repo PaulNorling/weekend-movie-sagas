@@ -4,4 +4,6 @@
 # [x]add details to detail page
 # []research card view pop up
 # [x]get movie.descripion to movie detail
-# []make home page appear first 
+# [x]make home page appear first
+# []make header
+# []update readme 
