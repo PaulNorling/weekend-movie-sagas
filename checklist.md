@@ -5,5 +5,7 @@
 # []research card view pop up
 # [x]get movie.descripion to movie detail
 # [x]make home page appear first
-# []make header
+# [x]make header
 # []update readme 
+# []make footer
+# []

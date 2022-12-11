@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 function App() {
 
@@ -26,7 +27,9 @@ function App() {
                     )
                 })}
         {/* Add Movie page */}
+        
       </Router>
+      <Footer/>
     </div>
   );
 }
