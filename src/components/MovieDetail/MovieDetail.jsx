@@ -7,8 +7,9 @@ function MovieDetail(){
     const dispatch = useDispatch();
     //get :id from url
     const params = useParams();
-    const details = useSelector(store => store.genres)
-        console.log('movieDetail', params, details)
+    const detail = useSelector(store => store.genres)
+    console.log('movieDetail', detail)
+
 
     const history = useHistory();
 
@@ -17,17 +18,19 @@ function MovieDetail(){
     }
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_DETAIL', payload: params});
+        dispatch({ type: 'FETCH_GENRE', payload: params});
     }, []);
 
     return (
         <div>
           <h3>Details</h3>
+          
           <section>
-            {details.map(detail => {
+            {detail.map(info => {
                 return (
-                    <div key={detail.id}>
-                        <h3>{detail.name}</h3>
+                    <div key={info.name}>
+                        <h3>{info.description}</h3>
+                        <h3>{info.name}</h3>
                     </div>
                 )
             })}
