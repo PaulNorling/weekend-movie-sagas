@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
-import {useParams, useHistory} from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
 
-function MovieDetail(){
+function MovieDetail({movie}){
     const dispatch = useDispatch();
-    //get :id from url
-    const params = useParams();
     const detail = useSelector(store => store.genres)
-    console.log('movieDetail', detail)
+    
 
 
     const history = useHistory();
@@ -18,18 +16,18 @@ function MovieDetail(){
     }
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_GENRE', payload: params});
+        dispatch({ type: 'FETCH_GENRE', payload: movie.id});
     }, []);
 
     return (
         <div>
-          <h3>Details</h3>
-          
+          <h2>Details</h2>
+          <h3>{movie.description}</h3>
           <section>
+            <h2>Genres</h2>
             {detail.map(info => {
                 return (
                     <div key={info.name}>
-                        <h3>{info.description}</h3>
                         <h3>{info.name}</h3>
                     </div>
                 )
