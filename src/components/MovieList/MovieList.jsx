@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import {useHistory} from 'react-router-dom'
+import MovieItem from '../MovieItem/MovieItem';
 
 function MovieList() {
     const history = useHistory();
@@ -13,18 +14,20 @@ function MovieList() {
     }, []);
 
     return (
-        <main>
+        <main >
             <h1>MovieList</h1>
-            <section className="movies">
+            
+            <div className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} onClick={() => {history.push(`/details/${movie.id}`)}}>
-                            <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
-                        </div>
+                        <MovieItem key={movie.id} movie={movie} />
+                        // <div key={movie.id} onClick={() => {history.push(`/details/${movie.id}`)}}>
+                        //     <h3>{movie.title}</h3>
+                        //     <img src={movie.poster} alt={movie.title}/>
+                        // </div>
                     );
                 })}
-            </section>
+            </div>
         </main>
 
     );
