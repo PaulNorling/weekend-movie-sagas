@@ -31,11 +31,10 @@ function* fetchAllMovies() {
 }
 
 function* fetchGenres(action) {
-    console.log('fetchGenres',action)
+    // get genres by id 
     try{
         const detail = yield axios.get(`/api/genre/${action.payload}`);
 
-        console.log('get details', detail);
         yield put({ type: 'SET_GENRES', payload: detail.data });
 
     } catch{

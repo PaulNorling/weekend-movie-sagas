@@ -13,21 +13,20 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Router>        
+      <Router>
+        {/* Movie gallery */}
         <Route path="/" exact>
           <MovieList />
         </Route>
         {/* Details page */}
-        {/* TODO BREAK INTO COMPOMONENT! */}
+        {/*loop for retrieving movie by id props movie*/}
         {movies.map(movie => {
-                    return (
-                        <Route key={movie.id} exact path={`/details/${movie.id}`}>
-                            <MovieDetail movie={movie} />
-                        </Route>
-                    )
-                })}
-        {/* Add Movie page */}
-        
+          return (
+            <Route key={movie.id} exact path={`/details/${movie.id}`}>
+              <MovieDetail movie={movie} />
+            </Route>
+          )
+        })}
       </Router>
       <Footer/>
     </div>
