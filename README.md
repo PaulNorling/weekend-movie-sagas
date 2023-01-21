@@ -20,11 +20,10 @@ Movies Sagas is an application for organizing movies and move details.
 5. Run git clone [ssh address] in your terminal
 6. `npm install`.
 7. Install postgress database using include database.sql file.
-8. Create postgress database and tables using the provided data.sql file.
-9. `npm run server`.
-10. In  open another terminal window
-11. `npm run client`.
-12. After `run client` you should be directed to //localhost:3000 on your browser.
+8. `npm run server`.
+9. In  open another terminal window
+10. `npm run client`.
+11. After `run client` you should be directed to //localhost:3000 on your browser.
 
 ## Usage
 
